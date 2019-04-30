@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "akilli-tahta-desktop", "akilli-tahta-desktop\akilli-tahta-desktop.csproj", "{78ADAB76-D33C-4190-A0F8-717917C34E3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkilliTahta", "AkilliTahta\AkilliTahta.csproj", "{08BCC7CD-9D96-48C3-9C09-0A03C38E3AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tester", "tester\tester.csproj", "{4EB2A8FD-5946-447B-8802-F93105310513}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{78ADAB76-D33C-4190-A0F8-717917C34E3A}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{78ADAB76-D33C-4190-A0F8-717917C34E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78ADAB76-D33C-4190-A0F8-717917C34E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BCC7CD-9D96-48C3-9C09-0A03C38E3AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BCC7CD-9D96-48C3-9C09-0A03C38E3AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BCC7CD-9D96-48C3-9C09-0A03C38E3AE8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BCC7CD-9D96-48C3-9C09-0A03C38E3AE8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4EB2A8FD-5946-447B-8802-F93105310513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB2A8FD-5946-447B-8802-F93105310513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB2A8FD-5946-447B-8802-F93105310513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB2A8FD-5946-447B-8802-F93105310513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
