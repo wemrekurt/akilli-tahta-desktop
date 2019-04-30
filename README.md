@@ -12,7 +12,7 @@ yeni kayıt adresi
 bilgisayarın açıldığını ve beklemede olduğunu bildirir
     ```http://globalmedia.local/wakeup/[serialnumber]```
 - content-type: 'text/plain'
-- outputs = true|false
+- outputs = null
 
 ### state
 bilgisayarın ekran kilidinin açılıp açılmayacağını sorgular
