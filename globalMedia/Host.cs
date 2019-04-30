@@ -10,7 +10,7 @@ namespace globalMedia
 {
     public class Host
     {
-        public string host = "http://globalmedia.local/";
+        private string host = "http://globalmedia.local/";
         private string serialNumber = string.Empty;
 
         public Host()
@@ -19,7 +19,11 @@ namespace globalMedia
             foreach (ManagementObject getserial in MOS.Get())
                 this.serialNumber = getserial["SerialNumber"].ToString();
 
-            this.client("wakeup");              // bilgisayarın açıldığını server a haber ver
+            try
+            {
+                this.client("wakeup");              // bilgisayarın açıldığını server a haber ver
+            }
+            catch {}
         }
 
         private string client(string func)
@@ -51,7 +55,37 @@ namespace globalMedia
             {
                 return false;
             }
-            return false;
+        }
+
+        public void shutdown()
+        {
+            try
+            {
+                this.filter(this.client("shutdown"));    // sistemin kapatıldığını haber ver
+            }
+            catch { }
+        }
+
+        public void add()
+        {
+            try
+            {
+                this.filter(this.client("add"));    // yeni bilgisayarın eklenmesi için haber ver
+            }
+            catch { }
+        }
+
+        public string board()
+        {
+            try
+            {
+                string ret = this.filter(this.client("board"));    // ilişkili olduğu sınıfın bilgilerini al
+                return ret;
+            }
+            catch 
+            { 
+                return "<h2>Bir iletişim hatası oluştu.</h2>";
+            }
         }
 
     }

@@ -27,33 +27,26 @@ namespace AkilliTahta
 
         protected override void OnStart(string[] args)
         {
-            string logFolder = AppDomain.CurrentDomain.BaseDirectory + "\\logs";
-            string todayLog = logFolder + "\\" + DateTime.Now.ToString("ddMMyyyy") + "Logger.log";
+            string logFolder = AppDomain.CurrentDomain.BaseDirectory + "\\logs";                    // log klasörü belirlendi
+            string todayLog = logFolder + "\\" + DateTime.Now.ToString("ddMMyyyy") + "Logger.log";  // bu günki log dosyası belirlendi
 
-            if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);
+            if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);                 //Log klasörü yoksa oluşturuldu
 
             // clear old log files
-            string[] files = Directory.GetFiles(logFolder);
+            string[] files = Directory.GetFiles(logFolder);         // log klasöründeki dosyalar istendi
             foreach (string file in files)
             {
-                FileInfo fi = new FileInfo(file);
-                if (fi.LastAccessTime < DateTime.Now.AddDays(-10))
-                    fi.Delete();
+                FileInfo fi = new FileInfo(file);                   // dosya bilgileri istendi
+                if (fi.LastAccessTime < DateTime.Now.AddDays(-10))  // 10 günden eski dosyalar seçildi
+                    fi.Delete();                                    // seçilen dosyalar silindi
             }
 
-            if (!File.Exists(todayLog)) File.Create(todayLog);
+            if (!File.Exists(todayLog)) File.Create(todayLog);      // bu günki log dosyası henüz oluşturulmadıysa oluşturuldu
 
-            string serialNumber = string.Empty;
-            ManagementObjectSearcher MOS = new ManagementObjectSearcher(" Select * From Win32_BIOS");
-            foreach (ManagementObject getserial in MOS.Get())
-            {
-                serialNumber = getserial["SerialNumber"].ToString();
-            }
+            globalMedia.Host local = new globalMedia.Host();        // local server ile iletişim başlatıldı
 
-            using (WebClient wc = new WebClient())
-            {
-                var json = wc.DownloadString("url");
-            }
+            
+
         }
 
         protected override void OnStop()
