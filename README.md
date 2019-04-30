@@ -25,3 +25,9 @@ bilgisayarın kapatıldığını bildirir
     ```http://globalmedia.local/shutdown/[serialnumber]```
 - content-type: 'text/plain'
 - outputs = null
+
+### board
+kaydı ve seri numarası onaylanmış bilgisayaların atandıkları sınıflar hakkındaki içerikleri bildiren sayfa
+    ```http://globalmedia.local/board/[serialnumber]```
+- content-type: 'text/html'
+- outputs = *
