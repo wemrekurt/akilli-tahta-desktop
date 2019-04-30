@@ -12,13 +12,13 @@ yeni kayıt adresi
 bilgisayarın açıldığını ve beklemede olduğunu bildirir
     ```http://globalmedia.local/wakeup/[serialnumber]```
 - content-type: 'text/plain'
-- outputs = null
+- outputs = true|false
 
 ### state
 bilgisayarın ekran kilidinin açılıp açılmayacağını sorgular
     ```http://globalmedia.local/state/[serialnumber]```
-content-type: 'text/plain'
-outputs = true|false
+- content-type: 'text/plain'
+- outputs = true|false
 
 ### shutdown
 bilgisayarın kapatıldığını bildirir
