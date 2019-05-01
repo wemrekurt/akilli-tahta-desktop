@@ -21,20 +21,24 @@ namespace globalMedia
             foreach (ManagementObject getserial in MOS.Get())
                 this.serialNumber = getserial["SerialNumber"].ToString();
 
-            //try
-            //{
-            //    this.client("wakeup");              // bilgisayarın açıldığını server a haber ver
-            //}
-            //catch {}
         }
 
         private string client(string func)
         {
-            using (WebClient wc = new WebClient())          // web istemci oluştur
+            try
             {
-                var json = wc.DownloadString(this.host + func + "/" + this.serialNumber + ".json");   // func adresini local server ve seri numara ile birleştirip 
-                                                                                            // oluşturulan yeni adrese istek at ve gelen yanıtı kaydet
-                return json;                                                                // kaydedilen yanıtı geri döndür
+                using (WebClient wc = new WebClient())          // web istemci oluştur
+                {
+                    
+                    var json = wc.DownloadString(this.host + func + "/" + this.serialNumber + ".json"); // func adresini local server ve seri numara ile birleştirip 
+                                                                                                        // oluşturulan yeni adrese istek at ve gelen yanıtı kaydet
+                    
+                    return json;                                                                        // kaydedilen yanıtı geri döndür
+                }
+            }
+            catch
+            {
+                return "{\"id\": 5,\"name\": \"none\",\"spec_name\": \"none\",\"state\": true}";
             }
         }
 
@@ -48,15 +52,6 @@ namespace globalMedia
             return sinif;
         }
 
-        public string gethtml()
-        {
-            using (WebClient wc = new WebClient())          // web istemci oluştur
-            {
-                var json = wc.DownloadString(this.host);        // ana sayfa istendi 
-                // oluşturulan yeni adrese istek at ve gelen yanıtı kaydet
-                return json;                                                                // kaydedilen yanıtı geri döndür
-            }
-        }
 
     }
 

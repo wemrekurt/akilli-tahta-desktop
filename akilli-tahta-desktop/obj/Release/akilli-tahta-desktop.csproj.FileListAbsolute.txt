@@ -1,0 +1,12 @@
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\akilli-tahta-desktop.exe.config
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\akilli-tahta-desktop.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\akilli-tahta-desktop.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\obj\Release\akilli_tahta_desktop.Properties.Resources.resources
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\obj\Release\akilli-tahta-desktop.csproj.GenerateResource.Cache
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\obj\Release\akilli-tahta-desktop.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\obj\Release\akilli-tahta-desktop.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\Geckofx-Core.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\Geckofx-Winforms.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\obj\Release\akilli_tahta_desktop.Form1.resources
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\globalMedia.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\akilli-tahta-desktop\bin\Release\globalMedia.pdb

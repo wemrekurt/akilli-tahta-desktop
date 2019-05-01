@@ -1,0 +1,5 @@
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Debug\tester.exe.config
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Debug\tester.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Debug\tester.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\obj\Debug\tester.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\obj\Debug\tester.pdb

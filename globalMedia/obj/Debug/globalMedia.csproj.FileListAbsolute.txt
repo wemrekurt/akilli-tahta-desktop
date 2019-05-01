@@ -1,0 +1,4 @@
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\bin\Debug\globalMedia.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\bin\Debug\globalMedia.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\obj\Debug\globalMedia.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\obj\Debug\globalMedia.pdb

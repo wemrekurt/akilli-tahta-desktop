@@ -1,0 +1,5 @@
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Release\tester.exe.config
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Release\tester.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\bin\Release\tester.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\obj\Release\tester.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\tester\obj\Release\tester.pdb
