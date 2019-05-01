@@ -5,12 +5,14 @@ using System.Management;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace globalMedia
 {
     public class Host
     {
-        private string host = "http://globalmedia.local/";
+        public string host = "http://192.168.43.17/";
+        //private string host = "http://globalmedia.local/";
         private string serialNumber = string.Empty;
 
         public Host()
@@ -19,74 +21,50 @@ namespace globalMedia
             foreach (ManagementObject getserial in MOS.Get())
                 this.serialNumber = getserial["SerialNumber"].ToString();
 
-            try
-            {
-                this.client("wakeup");              // bilgisayarın açıldığını server a haber ver
-            }
-            catch {}
+            //try
+            //{
+            //    this.client("wakeup");              // bilgisayarın açıldığını server a haber ver
+            //}
+            //catch {}
         }
 
         private string client(string func)
         {
             using (WebClient wc = new WebClient())          // web istemci oluştur
             {
-                var json = wc.DownloadString(this.host + func + "/" + this.serialNumber);   // func adresini local server ve seri numara ile birleştirip 
+                var json = wc.DownloadString(this.host + func + "/" + this.serialNumber + ".json");   // func adresini local server ve seri numara ile birleştirip 
                                                                                             // oluşturulan yeni adrese istek at ve gelen yanıtı kaydet
                 return json;                                                                // kaydedilen yanıtı geri döndür
             }
         }
 
-        private string filter(string tt)
+        public GlobalJson controle()
         {
-            return tt.Replace(" ", string.Empty).ToLower();     //tt metnini filreden geçir (tüm boşlukları sil ve tüm harfleri küçült)
+            var ret = this.client("rooms");
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            GlobalJson sinif = js.Deserialize<GlobalJson>(ret);
+
+            return sinif;
         }
 
-        public bool checkState()
+        public string gethtml()
         {
-            try
+            using (WebClient wc = new WebClient())          // web istemci oluştur
             {
-                string data = this.filter(this.client("state"));    // state bilgisini istemciden talep et ve filtreden geçirip data değişkenine aktar
-                if(String.Equals(data,"true"))  // eğer state değeri true ise;
-                    return true;                // true değerini geri döndür
-                else
-                    return false;               // false değerini geri döndür
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public void shutdown()
-        {
-            try
-            {
-                this.filter(this.client("shutdown"));    // sistemin kapatıldığını haber ver
-            }
-            catch { }
-        }
-
-        public void add()
-        {
-            try
-            {
-                this.filter(this.client("add"));    // yeni bilgisayarın eklenmesi için haber ver
-            }
-            catch { }
-        }
-
-        public string board()
-        {
-            try
-            {
-                string ret = this.filter(this.client("board"));    // ilişkili olduğu sınıfın bilgilerini al
-                return ret;
-            }
-            catch 
-            { 
-                return "<h2>Bir iletişim hatası oluştu.</h2>";
+                var json = wc.DownloadString(this.host);        // ana sayfa istendi 
+                // oluşturulan yeni adrese istek at ve gelen yanıtı kaydet
+                return json;                                                                // kaydedilen yanıtı geri döndür
             }
         }
 
+    }
+
+    public class GlobalJson
+    {
+        public int id;
+        public string name;
+        public string spec_name;
+        public bool state;
     }
 }

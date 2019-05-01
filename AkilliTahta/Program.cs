@@ -19,7 +19,7 @@ namespace AkilliTahta
 
             mainService ms = new mainService();
             ms.OnDebug(args);
-            
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
 #else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 

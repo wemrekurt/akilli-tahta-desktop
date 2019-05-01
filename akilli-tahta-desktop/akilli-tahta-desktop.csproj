@@ -85,6 +85,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\globalMedia\globalMedia.csproj">
+      <Project>{7038e733-6f3f-4eea-abb7-36b87ccb1c62}</Project>
+      <Name>globalMedia</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.0.0\build\net40\Baseclass.Contrib.Nuget.Output.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

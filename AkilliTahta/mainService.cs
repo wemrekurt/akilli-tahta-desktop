@@ -10,6 +10,7 @@ using System.Net;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace AkilliTahta
 {
@@ -25,15 +26,21 @@ namespace AkilliTahta
             OnStart(args);
         }
 
+        string logFolder = string.Empty, todayLog = string.Empty;
+        globalMedia.Host local = new globalMedia.Host(); // local server ile iletişim başlatıldı
+        Process proc = new Process();
+        bool laststate = false;
+
+
         protected override void OnStart(string[] args)
         {
-            string logFolder = AppDomain.CurrentDomain.BaseDirectory + "\\logs";                    // log klasörü belirlendi
-            string todayLog = logFolder + "\\" + DateTime.Now.ToString("ddMMyyyy") + "Logger.log";  // bu günki log dosyası belirlendi
+            this.logFolder = AppDomain.CurrentDomain.BaseDirectory + "\\logs";                    // log klasörü belirlendi
+            this.todayLog = logFolder + "\\" + DateTime.Now.ToString("ddMMyyyy") + "Logger.log";  // bu günki log dosyası belirlendi
 
-            if (!Directory.Exists(logFolder)) Directory.CreateDirectory(logFolder);                 //Log klasörü yoksa oluşturuldu
+            if (!Directory.Exists(this.logFolder)) Directory.CreateDirectory(this.logFolder);                 //Log klasörü yoksa oluşturuldu
 
             // clear old log files
-            string[] files = Directory.GetFiles(logFolder);         // log klasöründeki dosyalar istendi
+            string[] files = Directory.GetFiles(this.logFolder);         // log klasöründeki dosyalar istendi
             foreach (string file in files)
             {
                 FileInfo fi = new FileInfo(file);                   // dosya bilgileri istendi
@@ -41,17 +48,36 @@ namespace AkilliTahta
                     fi.Delete();                                    // seçilen dosyalar silindi
             }
 
-            if (!File.Exists(todayLog)) File.Create(todayLog);      // bu günki log dosyası henüz oluşturulmadıysa oluşturuldu
+            if (!File.Exists(this.todayLog)) File.Create(this.todayLog);      // bu günki log dosyası henüz oluşturulmadıysa oluşturuldu
 
-            globalMedia.Host local = new globalMedia.Host();        // local server ile iletişim başlatıldı
+            proc.StartInfo.FileName = "akilli-tahta-desktop.exe";
 
-            
-
+            System.Timers.Timer timer = new System.Timers.Timer(1000);
+            timer.Elapsed += timer_Elapsed;
+            timer.Enabled = true;
+            proc.Start();
+        }
+        
+        void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            globalMedia.GlobalJson ret = local.controle();
+            File.AppendAllText(this.todayLog, ret.state + Environment.NewLine);
+            if (ret.state == true && laststate == false)
+            {
+                proc.Kill();
+            }
+            else if(ret.state == false && laststate == true)
+            {
+                proc.Start();
+            }
+            laststate = ret.state;
         }
 
         protected override void OnStop()
         {
 
         }
+
+        
     }
 }

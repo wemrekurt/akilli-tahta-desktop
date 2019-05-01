@@ -15,7 +15,7 @@ namespace akilli_tahta_desktop
 {
     public partial class Form1 : Form
     {
-
+        globalMedia.Host local = new globalMedia.Host();
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace akilli_tahta_desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            WebBrowserMain.Navigate("http://globalmedia.com.tr");
+            WebBrowserMain.Navigate(local.host);
 
             #region alt+tab
 
