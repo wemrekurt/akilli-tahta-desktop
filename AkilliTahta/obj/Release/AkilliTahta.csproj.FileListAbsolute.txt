@@ -5,6 +5,6 @@ C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\Akil
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\AkilliTahta.pdb
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\bin\Release\globalMedia.dll
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\bin\Release\globalMedia.pdb
-C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\AkilliTahta.csprojResolveAssemblyReference.cache
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\AkilliTahta.ProjectInstaller.resources
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\AkilliTahta.csproj.GenerateResource.Cache
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\AkilliTahta\obj\Release\AkilliTahta.csprojResolveAssemblyReference.cache

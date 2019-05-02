@@ -1,0 +1,8 @@
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\bin\Debug\Checker.exe.config
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\bin\Debug\Checker.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\bin\Debug\Checker.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\bin\Debug\globalMedia.dll
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\bin\Debug\globalMedia.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\obj\Debug\Checker.csprojResolveAssemblyReference.cache
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\obj\Debug\Checker.exe
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\Checker\obj\Debug\Checker.pdb

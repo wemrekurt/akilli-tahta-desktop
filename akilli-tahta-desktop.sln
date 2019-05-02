@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "globalMedia", "globalMedia\
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{6609C0BA-FE2F-42EC-ACAF-8BA4B7671EB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checker", "Checker\Checker.csproj", "{4095D8A8-E8E1-45F8-961B-E57A9F6D7DDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{7038E733-6F3F-4EEA-ABB7-36B87CCB1C62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6609C0BA-FE2F-42EC-ACAF-8BA4B7671EB8}.Debug|Any CPU.ActiveCfg = Debug
 		{6609C0BA-FE2F-42EC-ACAF-8BA4B7671EB8}.Release|Any CPU.ActiveCfg = Release
+		{4095D8A8-E8E1-45F8-961B-E57A9F6D7DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4095D8A8-E8E1-45F8-961B-E57A9F6D7DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4095D8A8-E8E1-45F8-961B-E57A9F6D7DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4095D8A8-E8E1-45F8-961B-E57A9F6D7DDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

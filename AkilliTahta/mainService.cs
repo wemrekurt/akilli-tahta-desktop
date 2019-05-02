@@ -21,36 +21,14 @@ namespace AkilliTahta
             InitializeComponent();
         }
 
-        public void OnDebug(string[] args)
-        {
-            OnStart(args);
-        }
-
-        string logFolder = string.Empty, todayLog = string.Empty;
         globalMedia.Host local = new globalMedia.Host(); // local server ile iletişim başlatıldı
         Process proc = new Process();
         bool laststate = false;
 
-
         protected override void OnStart(string[] args)
         {
-            this.logFolder = AppDomain.CurrentDomain.BaseDirectory + "\\logs";                    // log klasörü belirlendi
-            this.todayLog = logFolder + "\\" + DateTime.Now.ToString("ddMMyyyy") + "Logger.log";  // bu günki log dosyası belirlendi
-
-            if (!Directory.Exists(this.logFolder)) Directory.CreateDirectory(this.logFolder);                 //Log klasörü yoksa oluşturuldu
-
-            // clear old log files
-            string[] files = Directory.GetFiles(this.logFolder);         // log klasöründeki dosyalar istendi
-            foreach (string file in files)
-            {
-                FileInfo fi = new FileInfo(file);                   // dosya bilgileri istendi
-                if (fi.LastAccessTime < DateTime.Now.AddDays(-10))  // 10 günden eski dosyalar seçildi
-                    fi.Delete();                                    // seçilen dosyalar silindi
-            }
-
-            if (!File.Exists(this.todayLog)) File.Create(this.todayLog);      // bu günki log dosyası henüz oluşturulmadıysa oluşturuldu
-
-            proc.StartInfo.FileName = "akilli-tahta-desktop.exe";
+            proc.StartInfo = new ProcessStartInfo("akilli-tahta-desktop.exe");
+            proc.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             System.Timers.Timer timer = new System.Timers.Timer(1000);
             timer.Elapsed += timer_Elapsed;
@@ -61,17 +39,23 @@ namespace AkilliTahta
         void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             globalMedia.GlobalJson ret = local.controle();
-            File.AppendAllText(this.todayLog, ret.state + Environment.NewLine);
             if (ret.state == true && laststate == false)
             {
                 proc.Kill();
             }
             else if(ret.state == false && laststate == true)
+            { 
+                if (!proc.HasExited) proc.Start();
+            }
+
+
+            if (ret.state == false && proc.HasExited != true)
             {
                 proc.Start();
             }
             laststate = ret.state;
         }
+
 
         protected override void OnStop()
         {

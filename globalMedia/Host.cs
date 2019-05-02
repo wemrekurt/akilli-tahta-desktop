@@ -6,17 +6,18 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.IO;
 
 namespace globalMedia
 {
     public class Host
     {
-        public string host = "http://192.168.43.17/";
-        //private string host = "http://globalmedia.local/";
+        public string host = "http://";
         private string serialNumber = string.Empty;
 
         public Host()
         {
+            this.host = File.ReadLines("host").First() + "/";
             ManagementObjectSearcher MOS = new ManagementObjectSearcher(" Select * From Win32_BIOS");
             foreach (ManagementObject getserial in MOS.Get())
                 this.serialNumber = getserial["SerialNumber"].ToString();

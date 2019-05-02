@@ -15,19 +15,13 @@ namespace AkilliTahta
         /// </summary>
         static void Main(string[] args)
         {
-#if DEBUG
-
-            mainService ms = new mainService();
-            ms.OnDebug(args);
-            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
-#else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
                 new mainService() 
             };
             ServiceBase.Run(ServicesToRun);
-#endif
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
         }
     }
 }
