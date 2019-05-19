@@ -2,3 +2,4 @@ C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\bin\Release\glob
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\bin\Release\globalMedia.pdb
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\obj\Release\globalMedia.dll
 C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\obj\Release\globalMedia.pdb
+C:\Users\snow\Documents\GitHub\akilli-tahta-desktop\globalMedia\obj\Release\globalMedia.csprojResolveAssemblyReference.cache

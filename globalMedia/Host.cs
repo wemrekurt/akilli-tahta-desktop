@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.IO;
+using System.Windows.Forms;
 
 namespace globalMedia
 {
@@ -21,6 +22,7 @@ namespace globalMedia
             ManagementObjectSearcher MOS = new ManagementObjectSearcher(" Select * From Win32_BIOS");
             foreach (ManagementObject getserial in MOS.Get())
                 this.serialNumber = getserial["SerialNumber"].ToString();
+            MessageBox.Show(this.serialNumber);
 
         }
 
